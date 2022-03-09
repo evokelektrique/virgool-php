@@ -1,0 +1,17 @@
+{
+    "name": "evokelektrique/virgool",
+    "type": "library",
+    "license": "AGPL-3.0",
+    "autoload": {
+        "psr-4": {
+            "Evokelektrique\\Virgool\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EVOKE",
+            "email": "evoke.lektrique@gmail.com"
+        }
+    ],
+    "require": {}
+}

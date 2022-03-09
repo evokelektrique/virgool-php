@@ -1,0 +1,3 @@
+namepsace Virgool;
+
+class Virgool {}
