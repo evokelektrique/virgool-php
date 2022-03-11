@@ -1,3 +1,11 @@
-namepsace Virgool;
+<?php
 
-class Virgool {}
+namespace Virgoolio;
+
+class Virgool {
+   public function __construct() {}
+
+   public static function test() {
+      return true;
+   }
+}
