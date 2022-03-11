@@ -4,7 +4,6 @@ namespace Virgoolio;
 
 use Goutte\Client;
 use Symfony\Component\HttpClient\HttpClient;
-use Virgoolio\Parse\Post;
 
 class Crawler {
 
