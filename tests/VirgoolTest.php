@@ -8,11 +8,18 @@ use Virgoolio\Virgool;
 
 final class VirgoolTest extends TestCase {
 
-   public function testFake(): void {
-      $this->assertTrue(Virgool::test());
+   public function testUsernameIsEmpty(): void {
+      $this->expectException(Virgoolio\Exception\Custom::class);
+
+      new Virgool("");
+   }
+
+   public function testGetPosts(): void {
+      $username = "virgool";
+      $virgool = new Virgool($username);
+      $posts = $virgool->get_posts();
+
+      $this->assertIsArray($posts);
    }
 
 }
-
-
-
