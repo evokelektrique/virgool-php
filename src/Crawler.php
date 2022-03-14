@@ -67,7 +67,7 @@ class Crawler {
             "title" => $title[0],
             "summary" => $summary[0],
             "metadata" => $metadata,
-            "image" => $image,
+            "image" => $image[0],
          ];
       });
 
