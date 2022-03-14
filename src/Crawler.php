@@ -10,6 +10,7 @@ class Crawler {
    const METHOD_GET = "GET";
    const BASE_URL = "https://virgool.io/@";
    const POST_SELECTOR = ".streamItem-post";
+   const POST_LINK_SELECTOR = ".streamItem-coverPos > a";
    const POST_TITLE_SELECTOR = ".streamItem--title";
    const POST_SUMMARY_SELECTOR = ".streamItem--summary";
    const POST_METADATA_SELECTOR = ".postStreamItem-meta-postInfo--item";
@@ -41,6 +42,10 @@ class Crawler {
       $posts = [];
 
       $posts = $request->filter(self::POST_SELECTOR)->each(function($item) {
+         $url = $item->filter(self::POST_LINK_SELECTOR)->each(function($item) {
+            return $item->link()->getUri();
+         });
+
          $title = $item->filter(self::POST_TITLE_SELECTOR)->each(function($item) {
             return trim($item->text());
          });
@@ -58,6 +63,7 @@ class Crawler {
          });
 
          return [
+            "url" => $url[0],
             "title" => $title[0],
             "summary" => $summary[0],
             "metadata" => $metadata,
